@@ -16,5 +16,3 @@ function last_word_length(s){
         }
     }
 }
-
-console.log(last_word_length("My name is Manu  "));
