@@ -23,11 +23,16 @@ class linkedlist {
         insertEnd(data){
        
         let current = this.head; // Use current to traverse through the linked list. setting it to head.
-        while(current.next != null){  // Using a while loop to traverse through the linked list.
+        if(current === null){
+            this.head = new Node(data);
+        }
+        else{
+        while(current.next !== null){  // Using a while loop to traverse through the linked list.
             current = current.next; // Going all the way to the end. when the next becomes null we will exit the while loop indicating we reached the end.
         }
      
         current.next = new Node(data); // Now that we reached the end we assign the next to the new node.
+    }
         this.size++; // Increase size to keep track.
     }
 
@@ -97,12 +102,4 @@ class linkedlist {
 }
 
 
-let ll = new linkedlist();
-ll.insert(100);
-ll.insert(200);
-ll.insert(300);
-ll.insertEnd(400);
-ll.insertAt(2,500);
-ll.removeat(4);
-// ll.clear();
-ll.show();
+
